@@ -1,254 +1,190 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vending Machine</title>
-    <link rel="stylesheet" href="../assets/css/reset.css" />
-    <link rel="stylesheet" href="../assets/css/vendingmachine.css" />
-  </head>
-  <body>
-    <header id="header">
-      <h1 class="blind">Cola Cola</h1>
-      <img src="../assets/img/mediaquery/logo.png" alt="Cola Cola" />
-    </header>
-    <main id="main">
-      <section class="vendingMachine">
-        <h2 class="blind">자판기</h2>
-        <ul class="cola-list">
-          <li>
-            <figure>
-              <img
-                src="../assets/img/mediaquery/Original_Cola.png"
-                alt="Original_Cola"
-              />
-              <figcaption>Original_Cola</figcaption>
-            </figure>
-            <div class="colaCash Original_Cola">1000원</div>
-          </li>
-          <li class="sold-out">
-            <figure>
-              <img
-                src="../assets/img/mediaquery/Violet_Cola.png"
-                alt="Violet_Cola"
-              />
-              <figcaption>Violet_Cola</figcaption>
-            </figure>
-            <div class="colaCash Violet_Cola">1000원</div>
-          </li>
-          <li>
-            <figure>
-              <img
-                src="../assets/img/mediaquery/Yellow_Cola.png"
-                alt="Yellow_Cola"
-              />
-              <figcaption>Yellow_Cola</figcaption>
-            </figure>
-            <div class="colaCash Yellow_Cola">1000원</div>
-          </li>
-          <li>
-            <figure>
-              <img
-                src="../assets/img/mediaquery/Cool_Cola.png"
-                alt="Cool_Cola"
-              />
-              <figcaption>Cool_Cola</figcaption>
-            </figure>
-            <div class="colaCash Cool_Cola">1000원</div>
-          </li>
-          <li>
-            <figure>
-              <img
-                src="../assets/img/mediaquery/Green_Cola.png"
-                alt="Green_Cola"
-              />
-              <figcaption>Green_Cola</figcaption>
-            </figure>
-            <div class="colaCash Green_Cola">1000원</div>
-          </li>
-          <li>
-            <figure>
-              <img
-                src="../assets/img/mediaquery/Orange_Cola.png"
-                alt="Orange_Cola"
-              />
-              <figcaption>Orange_Cola</figcaption>
-            </figure>
-            <div class="colaCash Orange_Cola">1000원</div>
-          </li>
-        </ul>
-        <div class="user-choice">
-          <div class="sellCola">
-            <div class="user-change">
-              <span class="balance-cash">잔액</span>
-              <span id="user-balance-cash">1000원</span>
-            </div>
-            <button class="return-cash">거스름돈 반환</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vending Machine</title>
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/vendingmachine.css" />
+</head>
+
+<body>
+  <header id="header">
+    <h1 class="blind">Cola Cola</h1>
+    <img src="./assets/img/mediaquery/logo.png" alt="Cola Cola" />
+  </header>
+  <main id="main">
+    <section class="vendingMachine">
+      <h2 class="blind">자판기</h2>
+      <ul class="cola-list">
+        <li>
+          <figure>
+            <img src="./assets/img/mediaquery/Original_Cola.png" alt="Original_Cola" />
+            <figcaption>Original_Cola</figcaption>
+          </figure>
+          <div class="colaCash Original_Cola">1000원</div>
+        </li>
+        <li class="sold-out">
+          <figure>
+            <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+            <figcaption>Violet_Cola</figcaption>
+          </figure>
+          <div class="colaCash Violet_Cola">1000원</div>
+        </li>
+        <li>
+          <figure>
+            <img src="./assets/img/mediaquery/Yellow_Cola.png" alt="Yellow_Cola" />
+            <figcaption>Yellow_Cola</figcaption>
+          </figure>
+          <div class="colaCash Yellow_Cola">1000원</div>
+        </li>
+        <li>
+          <figure>
+            <img src="./assets/img/mediaquery/Cool_Cola.png" alt="Cool_Cola" />
+            <figcaption>Cool_Cola</figcaption>
+          </figure>
+          <div class="colaCash Cool_Cola">1000원</div>
+        </li>
+        <li>
+          <figure>
+            <img src="./assets/img/mediaquery/Green_Cola.png" alt="Green_Cola" />
+            <figcaption>Green_Cola</figcaption>
+          </figure>
+          <div class="colaCash Green_Cola">1000원</div>
+        </li>
+        <li>
+          <figure>
+            <img src="./assets/img/mediaquery/Orange_Cola.png" alt="Orange_Cola" />
+            <figcaption>Orange_Cola</figcaption>
+          </figure>
+          <div class="colaCash Orange_Cola">1000원</div>
+        </li>
+      </ul>
+      <div class="user-choice">
+        <div class="sellCola">
+          <div class="user-change">
+            <span class="balance-cash">잔액</span>
+            <span id="user-balance-cash">1000원</span>
           </div>
-          <div class="user-deposit">
-            <label for="depositCola">
-              <input placeholder="입금액 입력" type="text" id="depositCola" />
-            </label>
-            <button class="deposit-cash">입금</button>
-          </div>
-          <div class="earn-Cola">
-            <ul class="choice-Cola">
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Original_Cola.png"
-                  alt="Original_Cola"
-                />
-                <span class="cola-name">Original_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Green_Cola.png"
-                  alt="Green_Cola"
-                />
-                <span class="cola-name">Green_Cola</span>
-                <span class="cola-count">2</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Orange_Cola.png"
-                  alt="Orange_Cola"
-                />
-                <span class="cola-name">Orange_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-            </ul>
-            <button class="user-earn-Cola">획득</button>
-          </div>
+          <button class="return-cash">거스름돈 반환</button>
         </div>
-      </section>
-      <section class="buyCola">
-        <h2 class="receipt-Cola blind">소지금 및 영수증</h2>
-        <div class="user-wallet">
-          <div class="user-wallet-now">
-            <span>소지금</span>
-            <span>25,000원</span>
-          </div>
+        <div class="user-deposit">
+          <label for="depositCola">
+            <input placeholder="입금액 입력" type="text" id="depositCola" />
+          </label>
+          <button class="deposit-cash">입금</button>
         </div>
-        <!-- <div class="container"> -->
-        <div class="user-receipt">
-          <span>획득한 음료</span>
-          <div class="user-cola-receipt">
-            <ul>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Original_Cola.png"
-                  alt="Original_Cola"
-                />
-                <span class="cola-name">Original_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Green_Cola.png"
-                  alt="Green_Cola"
-                />
-                <span class="cola-name">Green_Cola</span>
-                <span class="cola-count">2</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Orange_Cola.png"
-                  alt="Orange_Cola"
-                />
-                <span class="cola-name">Orange_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-              <li>
-                <img
-                  src="../assets/img/mediaquery/Violet_Cola.png"
-                  alt="Violet_Cola"
-                />
-                <span class="cola-name">Violet_Cola</span>
-                <span class="cola-count">1</span>
-              </li>
-            </ul>
-          </div>
-          <div class="user-cola-value">
-            <span>총금액</span>
-            <span id="cola-value">9,000원</span>
-          </div>
+        <div class="earn-Cola">
+          <ul class="choice-Cola">
+            <li>
+              <img src="./assets/img/mediaquery/Original_Cola.png" alt="Original_Cola" />
+              <span class="cola-name">Original_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Green_Cola.png" alt="Green_Cola" />
+              <span class="cola-name">Green_Cola</span>
+              <span class="cola-count">2</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Orange_Cola.png" alt="Orange_Cola" />
+              <span class="cola-name">Orange_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+          </ul>
+          <button class="user-earn-Cola">획득</button>
         </div>
-        <!-- </div> -->
-      </section>
-    </main>
-  </body>
+      </div>
+    </section>
+    <section class="buyCola">
+      <h2 class="receipt-Cola blind">소지금 및 영수증</h2>
+      <div class="user-wallet">
+        <div class="user-wallet-now">
+          <span>소지금</span>
+          <span>25,000원</span>
+        </div>
+      </div>
+      <!-- <div class="container"> -->
+      <div class="user-receipt">
+        <span>획득한 음료</span>
+        <div class="user-cola-receipt">
+          <ul>
+            <li>
+              <img src="./assets/img/mediaquery/Original_Cola.png" alt="Original_Cola" />
+              <span class="cola-name">Original_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Green_Cola.png" alt="Green_Cola" />
+              <span class="cola-name">Green_Cola</span>
+              <span class="cola-count">2</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Orange_Cola.png" alt="Orange_Cola" />
+              <span class="cola-name">Orange_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+            <li>
+              <img src="./assets/img/mediaquery/Violet_Cola.png" alt="Violet_Cola" />
+              <span class="cola-name">Violet_Cola</span>
+              <span class="cola-count">1</span>
+            </li>
+          </ul>
+        </div>
+        <div class="user-cola-value">
+          <span>총금액</span>
+          <span id="cola-value">9,000원</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
