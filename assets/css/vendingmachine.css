@@ -1,0 +1,438 @@
+/* @import url(//fonts.googleapis.com/earlyaccess/notosanskr.css); */
+
+:root {
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+}
+
+div, button, section, ul, li, figure, input {
+    box-sizing: border-box;
+}
+
+.blind {
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%); 
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+}
+
+input, button {
+    border: none;
+}
+
+input:focus,
+input:active,
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+button, .cola-list li {
+    cursor: pointer;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+}
+
+/*모바일 화면 구성*/
+
+body {
+    background: #FFF;
+}
+
+#header {
+    margin-bottom: 18px;
+}
+
+#header > img {
+    width: 188px;
+    height: 88px;
+    margin: 0 auto;
+}
+
+#main section {
+    width: 360px;
+    height: 545px;
+}
+
+.vendingMachine {
+    margin: 0 auto;
+    padding: 31px 27px 28px 27px;
+    background-color: #FFF;
+}
+
+.cola-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.cola-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 94px;
+    height: 130px;
+    flex-grow: 1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.cola-list li img {
+    width: 36px;
+    height: 65px;
+    padding: 11px 29px 6px;
+}
+
+.cola-list li figure {
+    margin-bottom: 7px;
+}
+
+.cola-list li figcaption {
+    font-size: 9px;
+    line-height: 13px;
+    color: #333;
+}
+
+.cola-list li .colaCash {
+    width: 70px;
+    height: 22px;
+    font-size: 12px;
+    line-height: 100%;
+    margin: 0 auto 9px auto;
+    padding: 5px 16px 5px 15px;
+    background: #6327FE;
+    border-radius: 50px;
+    color: #FFF;
+}
+
+.sold-out::after {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: url(../img/mediaquery/Sold-out.png);
+    background-repeat: no-repeat;
+    background-position: 48% 25%;
+    background-size: 57.51px, 44.85px;
+    width: 94px;
+    height: 130px;
+    border-radius: 10px;
+}
+
+.cola-list li:not(.sold-out):hover {
+    outline: 3px solid #6327FE;
+    border-radius: 10px;
+}
+
+.user-choice {
+    display: grid;
+    grid-template-rows: 33px 33px 106px;
+    margin-top: 20px;
+    gap: 11px;
+    height: 194px;
+}
+
+.sellCola, .user-deposit, .earn-Cola {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    flex-direction: row;
+}
+
+.sellCola .user-change, label {
+    width: 200px;
+}
+
+.sellCola .return-cash, .deposit-cash {
+    width: 94px;
+    background: #FFF;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 19px;
+}
+
+.user-change {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    line-height: 20px;
+    background: #EAE8FE;
+    border-radius: 5px;
+
+}
+
+.user-change .balance-cash, #user-balance-cash {
+    padding: 6px 10px 7px 10px;
+}
+
+.user-change .balance-cash::after, .user-wallet-now span:first-child:after {
+    content: ' :';
+}
+
+#depositCola {
+    width: 200px;
+    height: 33px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    padding: 6px 8px;
+}
+
+#depositCola::placeholder {
+    font-size: 13px;
+    line-height: 19px;
+    color: #BDBDBD;
+}
+
+.earn-Cola .choice-Cola {
+    width: 200px;
+    height: 106px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    background-color: #EAE8FE;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+/* 스크롤바 구현*/
+.choice-Cola::-webkit-scrollbar, .user-cola-receipt::-webkit-scrollbar {
+    width: 12px;
+}
+
+.choice-Cola::-webkit-scrollbar-thumb, .user-cola-receipt::-webkit-scrollbar-thumb {
+    background-color: #FFF;
+    border-radius: 50px;
+    height: 79px;
+    background-clip: padding-box;
+    border: solid 4px transparent;
+}
+
+.choice-Cola li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 170px;
+    height: 46px;
+    margin-right: 18px;
+    margin-left: 12px;
+    background-color: #FFF;
+    border-radius: 5px;
+}
+
+.choice-Cola li img {
+    width: 18px;
+    height: 33px;
+    margin-left: 10px;
+}
+
+.choice-Cola li .cola-name {
+    flex: 1;
+    margin-left: 10px;
+    width: 73px;
+    height: 10px;
+    font-size: 9px;
+    line-height: 10px;
+    color: #333;
+}
+
+.choice-Cola li:first-child {
+    margin-top: 12px;
+}
+
+.choice-Cola li:not(:first-of-type) {
+    margin-top: 6px;
+}
+
+.user-earn-Cola {
+    width: 94px;
+    height: 106px;
+    background: #6327FE;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 19px;
+    color: #FFF;
+}
+
+.buyCola {
+    margin: 0 auto;
+}
+
+.user-wallet {
+    width: 360px;
+    height: 50px;
+    background-color: #FFF;
+    padding: 9px 27px;
+}
+
+.user-wallet .user-wallet-now {
+    width: 306px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EAE8FE;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 6px 10px;
+}
+
+.user-wallet-now span:nth-child(2) {
+    font-weight: 700;
+}
+
+.user-receipt {
+	width: 360px;
+	height: 475px;
+    margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    background-color: #FFF;
+}
+
+.user-receipt > span:first-child {
+	width: 68px;
+	height: 20px;
+	font-weight: 700;
+	font-size: 14px;
+	line-height: 20px;
+    white-space: nowrap;
+    margin: 24px auto 13px;
+}
+
+.user-receipt .user-cola-receipt {
+    display: flex;
+    flex-direction: column;
+    width: 306px;
+    height: 364px;
+    background-color: #EAE8FE;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    overflow-y: auto;
+}
+
+.user-cola-receipt li {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    width: 276px;
+    height: 46px;
+    background-color: #FFF;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.user-cola-receipt li img {
+    width: 18px;
+    height: 33px;
+    margin-left: 10px;
+}
+
+.user-cola-receipt li .cola-name {
+    width: 73px;
+    height: 10px;
+    flex: 1;
+    margin-left: 10px;
+    font-size: 9px;
+    line-height: 10px;
+    color: #333;
+}
+
+li .cola-count {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 30px;
+    margin: 8px;
+}
+
+.user-cola-receipt li:first-child {
+    margin-top: 12px;
+}
+
+.user-cola-receipt li:not(:first-of-type) {
+    margin-top: 6px;
+}
+
+.user-cola-value {
+    width: 109px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: end;
+    margin-left: auto;
+    margin-top: 6px;
+    margin-right: 27px;
+}
+
+/* PC 화면 구성 */
+
+@media screen and (min-width:361px) and (max-width:748px){
+    body {
+        background-color: #EAE8FE;
+    }
+
+    .sold-out::after {
+        background-position: 50% 50%;
+        background-size: 57.51px, 44.85px;
+    } 
+}
+
+@media screen and (min-width: 749px) {
+
+    body {
+        background-color: #EAE8FE;
+    }
+
+    
+    .vendingMachine {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        margin-left: auto;
+        margin-right: 14px;
+        padding: 31px 27px 28px 27px;
+        }  
+
+    #header {
+        margin-bottom: 43px;
+    }
+
+    #header > img {
+        width: 386px;
+        height: 180px;
+    }
+
+    #main {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .buyCola {
+        margin-right: auto;
+        margin-left: 14px;
+    } 
+    
+    .sold-out::after {
+        background-position: 50% 50%;
+        background-size: 57.51px, 44.85px;
+    } 
+}
